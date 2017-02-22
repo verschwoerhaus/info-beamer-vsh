@@ -27,6 +27,7 @@ local utils = require "utils"
 local raw = sys.get_ext "raw_video"
 
 local white = resource.create_colored_texture(1,1,1,1)
+local vshgelb = resource.create_colored_texture(0.8,0.6,0.2,1)
 local black = resource.create_colored_texture(0,0,0,1)
 
 local loop = resource.load_video{
@@ -220,7 +221,8 @@ Sidebar = (function()
             gl.translate(WIDTH-sidebar_width, 0)
             gl.rotate(max_rotate - visibility * max_rotate, 0, 1, 0) 
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
-            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
+            -- res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
+            vshgelb:draw(0, 0, sidebar_width, HEIGHT, 0.5+(1.0 - Fadeout.alpha()))
 
             loop:draw(10, 350, 320, 350+80)
 
