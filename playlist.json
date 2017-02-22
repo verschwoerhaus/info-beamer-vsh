@@ -13,12 +13,8 @@
     "chance": 0.15,
     "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
 }, {
-    "module": "nav",
-    "chance": 0.05,
-    "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
-},{
     "module": "hvv",
-    "hours": "1 2 3 4 5 6 7"
+    "hours": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23"
 }, {
     "module": "talks",
     "options": {
@@ -42,10 +38,4 @@
     "module": "ads",
     "chance": 0.5,
     "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
-}, {
-    "module": "text",
-    "options": {
-        "text": "Want to show your project on this screen? Contact 32c3@info-beamer.com"
-    },
-    "chance": 0.2
 }]
