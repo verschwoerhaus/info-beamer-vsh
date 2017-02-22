@@ -16,7 +16,7 @@ util.loaders.pkm = resource.load_image
 -- available resources. global, so they can be used from modules
 res = util.resource_loader({
     "font.ttf";
-    "bottle.png";
+    "Logo.png";
     "house1.png";
     "house2.png";
     "tower.png";
@@ -215,21 +215,17 @@ Sidebar = (function()
 
     local function draw()
         if visibility > 0.01 then
-            loop:start()
             local max_rotate = 90
             gl.pushMatrix()
             gl.translate(WIDTH-sidebar_width, 0)
             gl.rotate(max_rotate - visibility * max_rotate, 0, 1, 0) 
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
-            -- res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
             vshgelb:draw(0, 0, sidebar_width, HEIGHT, 0.5+(1.0 - Fadeout.alpha()))
+            util.draw_correct(res.Logo,20, 20, sidebar_width-20, 500)
 
-            loop:draw(10, 350, 320, 350+80)
 
             -- res.font:write(125, HEIGHT-45, "info-beamer.com", 40, 0,0,0, visibility)
             gl.popMatrix()
-        else
-            loop:stop()
         end
 
         local size = 100
@@ -238,18 +234,10 @@ Sidebar = (function()
         local w = res.font:width(time, size)
         local sidebar_x = WIDTH - sidebar_width + (sidebar_width-w)/2
 
-        local tower_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-150)
-        local tower_y = utils.easeInOut(visibility, 900, 660)
-        res.tower:draw(tower_x, tower_y-200, tower_x + 100, tower_y + 145, visibility*2)
-
-        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
-        local house_y = utils.easeInOut(visibility, 900, 650)
-        res.house2:draw(house_x, house_y, house_x + 280, house_y + 180, visibility*2)
-
-        local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-320)
-        local clock_y = utils.easeInOut(visibility, HEIGHT-105, 850)
-        res.house1:draw(clock_x, clock_y-100, clock_x + 300, clock_y + 155)
-        res.font:write(clock_x + 150 - w/2, clock_y+5, time, 100, highlight_a(1))
+        local clock_x = utils.easeInOut(visibility, WIDTH-300, WIDTH-320)
+        local clock_y = utils.easeInOut(visibility, HEIGHT-110, 850)
+        vshgelb:draw(clock_x + 120 - w/2, clock_y, clock_x + w/2 + 170, clock_y + 104, 1)
+        res.font:write(clock_x + 150 - w/2, clock_y+5, time, 100, 0.14,0.12,0.12,1)
     end
 
     local current_speed = 0
