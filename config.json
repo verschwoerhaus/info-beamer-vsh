@@ -1,1 +1,4 @@
-{"timezone":"Europe/Berlin"}
+{
+   "background": {"asset_name":"background.jpg", "type":"image", "filename":"background.jpg"},
+   "timezone":"Europe/Berlin"
+}
