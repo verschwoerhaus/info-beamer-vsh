@@ -4,9 +4,9 @@
         "videos": [
             {
                 "file": "3d-druck.mp4",
-                "duration": 9.2,
+                "duration": 9.0,
                 "raw": false,
-                "text": "Need a 3D printed part?"
+                "text": "3D-Druck gefaellig? Wir haben's!"
             }
         ]
     },
@@ -19,7 +19,7 @@
 }, {
     "module": "text",
     "options": {
-        "text": "Last Game at Game Parlour tonight: Pre New Year's Eve! Join us at 23:59:50 and count the last 10 seconds!"
+        "text": "Simon ist ein ganz schoener Lulli!"
     },
     "chance": 0.2
 }, {

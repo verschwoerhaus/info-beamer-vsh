@@ -71,6 +71,8 @@ function M.run(duration, tweet, fn)
 
     a.add(anims.tweet_profile(S, E, x, start_y, img, 120))
 
+    Fadeout.fade(E-1)
+
     for now in fn.upto_t(E) do
         a.draw(now)
     end
