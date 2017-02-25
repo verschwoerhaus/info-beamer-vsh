@@ -58,6 +58,10 @@ def get_schedule(url):
                 end_unix = to_unixtimestamp(end),
                 duration = int(duration.total_seconds() / 60),
                 title = text_or_empty(event, 'title'),
+                subtitle = text_or_empty(event, 'subtitle'),
+                abstract = text_or_empty(event, 'abstract'),
+                logo = text_or_empty(event, 'logo'),
+                
                 place = text_or_empty(event, 'room'),
                 speakers = [
                     unicode(person.text.strip()) 
@@ -96,10 +100,13 @@ def main():
                 speakers = [s for s in event['speakers'] if s],
                 start_str = event['start_str'],
                 title = event['title'],
+                subtitle = event['subtitle'],
+                abstract = event['abstract'],
                 type = event['type'],
                 start_unix = event['start_unix'],
                 end_unix = event['end_unix'],
                 id = event['id'],
+                logo = event['logo'],
             ) for event in sorted(events, key=itemgetter('start_unix'))], 
                 ensure_ascii=False,
                 separators=(',',':')
