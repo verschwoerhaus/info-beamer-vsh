@@ -126,38 +126,32 @@ function M.run(duration, next_talks, fn)
         S = S + 0.05
         y = y + 5
 
-
         -- SECOND LINE PER EVENT
 
         local now = Time.unixtime()
         local time
         local show_full = false
         local til = talk.start_unix - now
-        if til > 0 and til < 60 then
-            time = "Jetzt"
-            local w = res.font:width(time, SPEAKER_SIZE)
-            a.add(anims.moving_font(S, E, x+180-w, y, time, SPEAKER_SIZE, 0.94,0.57,0.1$
-            show_full = true
-        elseif talk.start_unix > now then
-            time = talk.start_timestr
-            local w = res.font:width(time, SPEAKER_SIZE)
-            a.add(anims.moving_font(S, E, x+180-w, y, time, SPEAKER_SIZE, 1,1,1,1))
-        else
-            time = string.format("vor %d min", math.ceil(-til/60))
-            local w = res.font:width(time, SPEAKER_SIZE)
-            a.add(anims.moving_font(S, E, x+180-w, y, time, SPEAKER_SIZE, .5,.5,.5,1))
-            show_full = true
-        end
+
+        time = talk.start_timestr
+        local w = res.font:width(time, SPEAKER_SIZE)
+        a.add(anims.moving_font(S, E, x+180-w, y, time, SPEAKER_SIZE, 1,1,1,1))
 
         for idx = 1, #talk.subtlines do
             local subtline = talk.subtlines[idx]
             a.add(anims.moving_font(S, E, x+220, y, subtline, SPEAKER_SIZE, 1,1,1,1))
             y = y + SPEAKER_SIZE
         end
+
+
         S = S + 0.05
         y = y + 5
 
         -- THIRD LINE PER EVENT
+
+        local wday = talk.start_weekday
+        local wdsize = res.font:width(wday, SPEAKER_SIZE)
+        a.add(anims.moving_font(S, E, x+180-wdsize, y, wday, SPEAKER_SIZE, .5,.5,.5,1))
 
         local text = talk.place .. ", von/mit "
         a.add(anims.moving_font(S, E, x+220, y, text, SPEAKER_SIZE, .5,.5,.5,1)); S=S+0.1
