@@ -52,8 +52,10 @@ def get_schedule(url):
 
             parsed_events.append(dict(
                 start = start.astimezone(pytz.utc),
+                start_date = start.strftime('%-d.%-m.'),
                 start_str = start.strftime('%H:%M'),
                 end_str = end.strftime('%H:%M'),
+                start_weekday = start.strftime('%A'),
                 start_unix  = to_unixtimestamp(start),
                 end_unix = to_unixtimestamp(end),
                 duration = int(duration.total_seconds() / 60),
@@ -99,6 +101,8 @@ def main():
                 place = event['place'],
                 speakers = [s for s in event['speakers'] if s],
                 start_str = event['start_str'],
+                start_date = event['start_date'],
+                start_weekday = event['start_weekday'],
                 title = event['title'],
                 subtitle = event['subtitle'],
                 abstract = event['abstract'],
