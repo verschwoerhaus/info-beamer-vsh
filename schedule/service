@@ -7,12 +7,15 @@ import json
 import traceback
 import urllib2
 import calendar
+import locale
 from datetime import datetime, timedelta
 from operator import itemgetter
 
 import dateutil.parser
 import defusedxml.ElementTree as ET
 from hosted import CONFIG
+
+locale.setlocale(locale.LC_TIME, 'de_DE.utf8')
 
 CONFIG.restart_on_update()
 
