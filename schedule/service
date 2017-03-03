@@ -104,6 +104,7 @@ def main():
                 place = event['place'],
                 speakers = [s for s in event['speakers'] if s],
                 start_str = event['start_str'],
+                end_str = event['end_str'],
                 start_date = event['start_date'],
                 start_weekday = event['start_weekday'],
                 title = event['title'],

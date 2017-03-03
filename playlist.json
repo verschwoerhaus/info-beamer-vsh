@@ -28,9 +28,6 @@
 }, {
     "module": "twitter"
 }, {
-    "module": "logo",
-    "chance": 0.4
-}, {
     "module": "ads",
-    "chance": 0.1
+    "chance": 0.2
 }]

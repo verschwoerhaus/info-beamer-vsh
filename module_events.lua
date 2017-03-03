@@ -41,11 +41,13 @@ function M.prepare(options)
     for idx = 1, #talks do
         local talk = talks[idx]
 
-        -- Aktuell laufende (fuer 15 Minuten)
+        -- Aktuell laufende (bis zum Ende)
         if now > talk.start_unix and now < talk.end_unix then
-            if talk.start_unix + 15 * 60 > now then
+            -- if talk.start_unix + 15 * 60 > now then
+                talk.start_date = 'Jetzt'
+                talk.start_str = 'Bis ' .. talk.end_str
                 lineup[#lineup+1] = talk
-            end
+            -- end
         end
 
         -- Bald startende
