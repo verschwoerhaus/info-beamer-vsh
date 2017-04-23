@@ -27,7 +27,7 @@ local utils = require "utils"
 local raw = sys.get_ext "raw_video"
 
 local white = resource.create_colored_texture(1,1,1,1)
-local vshgelb = resource.create_colored_texture(0.8,0.6,0.2,1)
+local vshgelb = resource.create_colored_texture(0.95,0.77,0,1)
 local black = resource.create_colored_texture(0,0,0,1)
 
 local loop = resource.load_video{
