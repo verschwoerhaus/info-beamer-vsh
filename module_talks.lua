@@ -94,7 +94,7 @@ function M.run(duration, next_talks, fn)
     local E = duration
 
     if #next_talks == 0 then
-        a.add(anims.moving_font(S, E, x+180, y+400, "No more talks :(", 160, 1,1,1,1)); y=y+60; S=S+0.5
+        a.add(anims.moving_font(S, E, x+180, y+400, "Sendepause!", 160, 1,1,1,1)); y=y+60; S=S+0.5
     end
 
     local full_shown = {}
