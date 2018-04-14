@@ -30,11 +30,6 @@ local white = resource.create_colored_texture(1,1,1,1)
 local vshgelb = resource.create_colored_texture(0.95,0.77,0,1)
 local black = resource.create_colored_texture(0,0,0,1)
 
-local loop = resource.load_video{
-    file = "loop.mp4";
-    looped = true;
-}
-
 local function highlight_a(a)
     return 0.94, 0.57, 0.14, a
 end
