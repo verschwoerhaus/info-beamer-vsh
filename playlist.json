@@ -61,15 +61,12 @@
 }, {
     "module": "text",
     "options": {
-        "text": "Mehr auf www.verschwoerhaus.de"
+        "text": "Mehr auf verschwoerhaus.de"
     },
     "chance": 0.2
 }, {
     "module": "images",
     "chance": 0.5
-}, {
-    "module": "twitter",
-    "chance": 0.1
 }, {
     "module": "ads",
     "chance": 0.2
