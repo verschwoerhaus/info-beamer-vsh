@@ -54,17 +54,6 @@
     },
     "chance": 0.15
 }, {
-    "module": "events",
-    "options": {
-        "duration": 14
-    }
-}, {
-    "module": "text",
-    "options": {
-        "text": "Mehr auf verschwoerhaus.de"
-    },
-    "chance": 0.2
-}, {
     "module": "images",
     "chance": 0.5
 }, {
